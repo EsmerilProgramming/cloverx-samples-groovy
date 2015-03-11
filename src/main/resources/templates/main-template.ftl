@@ -5,8 +5,7 @@
 		<link rel="stylesheet" href="/static/css/cloverx.css" >
 </head>
 <body>
-	<h1>Hello to clover sambles</h1>
-	
+	<h1>Hello to clover samples</h1>
 	<p>This is a simple example of what you can do with CloverX framework</p>
 	<#include "/_menu.ftl" />
 
