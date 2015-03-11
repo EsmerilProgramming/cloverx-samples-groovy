@@ -19,7 +19,7 @@ import java.util.List
 @Controller(path = "/car")
 class CarController {
 
-  private static final Logger LOGGER = Logger.getLogger(CarController.class)
+  private static final Logger LOGGER = Logger.getLogger(CarController)
 
   @Deprecated
   @Page("form")
