@@ -47,7 +47,7 @@ class CarController {
     request.addAttribute("cars" , cars)
   }
 
-  List<Car> getCars(CloverXRequest request) {
+  def getCars(CloverXRequest request) {
     List<Car> cars = (List<Car>) request.getSession().getAttribute("carList")
     if(!cars) {
       cars = new ArrayList()
