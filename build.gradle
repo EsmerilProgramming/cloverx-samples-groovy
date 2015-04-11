@@ -18,7 +18,7 @@ apply plugin: 'application'
 
 group = 'org.esmerilprogramming'
 version = '0.1'
-mainClassName = 'org.esmerilprogramming.cloverx_samples_groovy.Main'
+mainClassName = 'org.esmerilprogramming.overtown_samples_groovy.Main'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
@@ -33,8 +33,8 @@ repositories {
 }
 
 dependencies {
-  compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.4.0'
-  compile group: 'com.github.esmerilprogramming', name: 'cloverx', version: '0.3.0-SNAPSHOT'
+  compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.4.1'
+  compile group: 'com.github.esmerilprogramming', name: 'overtown', version: '0.4.0-SNAPSHOT'
 }
 
 task wrapper(type: Wrapper) {

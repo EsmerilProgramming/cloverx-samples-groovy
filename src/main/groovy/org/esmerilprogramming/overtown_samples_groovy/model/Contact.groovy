@@ -1,4 +1,4 @@
-package org.esmerilprogramming.cloverx_samples_groovy.model
+package org.esmerilprogramming.overtown_samples_groovy.model
 
 import groovy.transform.Canonical
 
