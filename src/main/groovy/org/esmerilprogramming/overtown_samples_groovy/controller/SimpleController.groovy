@@ -1,7 +1,7 @@
 package org.esmerilprogramming.overtown_samples_groovy.controller
 
-import org.esmerilprogramming.cloverx.annotation.Controller
-import org.esmerilprogramming.cloverx.annotation.Page
+import org.esmerilprogramming.overtown.annotation.Controller
+import org.esmerilprogramming.overtown.annotation.Page
 
 @Controller
 class SimpleController {

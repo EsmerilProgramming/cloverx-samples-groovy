@@ -2,11 +2,11 @@ package org.esmerilprogramming.overtown_samples_groovy.controller
 
 import org.esmerilprogramming.overtown_samples_groovy.model.Car
 import org.esmerilprogramming.overtown_samples_groovy.model.Contact
-import org.esmerilprogramming.cloverx.annotation.Controller
-import org.esmerilprogramming.cloverx.annotation.JSONResponse
-import org.esmerilprogramming.cloverx.annotation.Page
-import org.esmerilprogramming.cloverx.http.CloverXRequest
-import org.esmerilprogramming.cloverx.http.JsonResponse
+import org.esmerilprogramming.overtown.annotation.Controller
+import org.esmerilprogramming.overtown.annotation.JSONResponse
+import org.esmerilprogramming.overtown.annotation.Page
+import org.esmerilprogramming.overtown.http.OvertownRequest
+import org.esmerilprogramming.overtown.http.JsonResponse
 
 @Controller
 class JsonController {
@@ -18,7 +18,7 @@ class JsonController {
 
   @JSONResponse(rootAttribute = '')
   @Page(value='json/toJson')
-  void toJson(Contact contact , CloverXRequest request) {
+  void toJson(Contact contact , OvertownRequest request) {
     println contact
     request.addAttribute('contact', contact)
   }

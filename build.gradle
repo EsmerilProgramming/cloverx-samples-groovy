@@ -17,11 +17,11 @@ apply plugin: 'groovy'
 apply plugin: 'application'
 
 group = 'org.esmerilprogramming'
-version = '0.1'
+version = '0.1.0'
 mainClassName = 'org.esmerilprogramming.overtown_samples_groovy.Main'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 run.standardInput = System.in
 
@@ -38,5 +38,5 @@ dependencies {
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '2.3'
+  gradleVersion = '2.4'
 }

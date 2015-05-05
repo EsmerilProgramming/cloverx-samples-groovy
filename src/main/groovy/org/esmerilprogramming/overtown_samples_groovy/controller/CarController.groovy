@@ -3,51 +3,45 @@ package org.esmerilprogramming.overtown_samples_groovy.controller
 import io.undertow.server.HttpServerExchange
 import io.undertow.util.Headers
 
-import org.esmerilprogramming.cloverx.annotation.Controller
-import org.esmerilprogramming.cloverx.annotation.Page
-import org.esmerilprogramming.cloverx.http.CloverXRequest
-import org.esmerilprogramming.cloverx.http.CloverXSession
-import org.esmerilprogramming.cloverx.http.JsonResponse
-import org.jboss.logging.Logger
+import org.esmerilprogramming.overtown.annotation.Controller
+import org.esmerilprogramming.overtown.annotation.Page
+import org.esmerilprogramming.overtown.http.OvertownRequest
+import org.esmerilprogramming.overtown.http.OvertownSession
+import org.esmerilprogramming.overtown.http.JsonResponse
 
 import org.esmerilprogramming.overtown_samples_groovy.model.Car
 
 import javax.servlet.http.HttpSession
-import java.util.ArrayList
-import java.util.List
 
 @Controller(path = '/car')
 class CarController {
 
-  private static final Logger LOGGER = Logger.getLogger(CarController)
-
   @Deprecated
   @Page('form')
-  void form(CloverXRequest request) {
+  void form(OvertownRequest request) {
     HttpServerExchange exchange = request.exchange()
     exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, 'text/html')
-    exchange.getResponseSender().send('<form action='/car/read' method='post' >'
-        + '<label>Year:</label><input name='car.year' />'
-        + '<label>Model:</label><input name='car.model' />'
-        + '<button type='submit'>Submit</button>'
+    exchange.getResponseSender().send('<form action=\'/car/read\' method=\'post\' >'
+        + '<label>Year:</label><input name=\'car.year\' />'
+        + '<label>Model:</label><input name=\'car.model\' />'
+        + '<button type=\'submit\'>Submit</button>'
         + '</form>')
 
   }
 
   @Page(value = 'list' , responseTemplate = 'cars/list.ftl')
-  void list(CloverXRequest request) {
+  void list(OvertownRequest request) {
     request.addAttribute('cars' , getCars(request))
   }
 
   @Page(value = 'read' , responseTemplate = 'cars/list.ftl')
-  void read(Car car, CloverXRequest request) {
-    LOGGER.info(car)
+  void read(Car car, OvertownRequest request) {
     List<Car> cars = getCars(request)
     cars << car
     request.addAttribute('cars' , cars)
   }
 
-  def getCars(CloverXRequest request) {
+  def getCars(OvertownRequest request) {
     List<Car> cars = (List<Car>) request.getSession().getAttribute('carList')
     if(!cars) {
       cars = new ArrayList()

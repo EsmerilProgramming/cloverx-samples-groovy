@@ -5,7 +5,7 @@ import groovy.transform.Canonical
 @Canonical
 class Contact {
 
-  Integer id
+  int id
   String name
   String email
   String celphone

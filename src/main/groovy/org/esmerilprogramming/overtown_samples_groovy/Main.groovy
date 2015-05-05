@@ -1,13 +1,13 @@
 package org.esmerilprogramming.overtown_samples_groovy
 
-import org.esmerilprogramming.cloverx.server.CloverX
-import org.esmerilprogramming.cloverx.server.ConfigurationBuilder
+import org.esmerilprogramming.overtown.server.Overtown
+import org.esmerilprogramming.overtown.server.ConfigurationBuilder
 
 class Main {
 
   static main(args) {
 
-    new CloverX(new ConfigurationBuilder()
+    new Overtown(new ConfigurationBuilder()
     .withPackageToScan('org.esmerilprogramming.overtown_samples_groovy')
     .withHost('localhost')
     .build())
